@@ -47,14 +47,13 @@
 					<div class="alert alert-danger">${message}</div>
 				</div>
 				<div class="col">
-					<img class="rounded mx-auto d-block"
-						src="<c:url value="/resources/images/empty_cart.png" />" />
+					<img class="img-fluid" src="<c:url value="/resources/images/empty_cart.png" />" />
 				</div>
 			</div>
 			<div class="col text-center" style="margin-top: 20px;">
-				<a href="<c:url value="/home"></c:url>"><button
-						class="btn btn-primary" style="text-align: center;">Continue
-						Shopping</button></a>
+				<a href="<c:url value="/home"></c:url>">
+				 <button class="btn btn-primary" style="text-align: center;">Continue Shopping</button>
+				</a>
 			</div>
 		</c:if>
 
@@ -78,9 +77,9 @@
 										src='<c:url value="/resources/images/${i.name}" /> '
 										width="280" />
 									</a>
-									<a href="detail/${product.id}"><button
-											style="display: none; margin-top: -40px;"
-											class="btn btn-primary">Detail</button></a>
+									<a href="detail/${product.id}">
+										<button style="display: none; margin-top: -40px;" class="btn btn-primary">Detail</button>
+									</a>
 								</c:if>
 							</c:forEach>
 
@@ -91,16 +90,6 @@
 								value="${product.category.id}">
 							<p class="text-center">${product.description}</p>
 							<p class="text-center">${product.price}&nbsp;Vnd</p>
-							<!-- 
-							<div class="text-center">
-								<form action='add' method="get">
-									<input type="hidden" name="id" value="${product.id}" /> <input
-										type="hidden" name="quantity" value="1" /> <input
-										type="submit" value="Add to cart" class="btn btn-primary"
-										style="margin-bottom: 20px !important;">
-								</form>
-							</div>
-							 -->
 						</div>
 
 					</div>

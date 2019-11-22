@@ -10,25 +10,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>JSP Page</title>
+<jsp:include page="../header.jsp"></jsp:include>
 </head>
 <body>
-	<h1>Admin Home</h1>
+	<div class="container" style="margin-top: 10rem;">
+
+		<h1 class="text-center">Admin Home</h1>
 
 
-	<p>
-		<a href="<c:url value="/home"/>">Home</a>
-	</p>
-	<!-- If Authenticated -->
-	<sec:authorize access="isAuthenticated()">
-		<sec:authorize access="hasRole('ROLE_ADMIN')">
-			<p>
-				<a href="<c:url value="/admin/home"/>">Admin Home</a>
-			</p>
-			<p>
-				<a href="<c:url value="/admin/list"/>">Manager Product</a>
-			</p>
-		</sec:authorize>
-		<!-- 
+		<p class="text-center">
+			<a href="<c:url value="/home"/>">Home</a>
+		</p>
+		<!-- If Authenticated -->
+		<sec:authorize access="isAuthenticated()">
+			<sec:authorize access="hasRole('ROLE_ADMIN')">
+				<p class="text-center">
+					<a href="<c:url value="/admin/list"/>">Manager Product</a>
+				</p>
+			</sec:authorize>
+			<!-- 
 	<sec:authorize access="hasRole('ROLE_USER')">
 		<p>
 			<a href="<c:url value="/user/home"/>">User Home</a>
@@ -49,16 +49,17 @@
 		</p>
 	</sec:authorize>
  -->
-		<p>
-			<a href="<c:url value="/logout"/>">Logout</a>
-		</p>
-	</sec:authorize>
+			<p class="text-center">
+				<a href="<c:url value="/logout"/>">Logout</a>
+			</p>
+		</sec:authorize>
 
-	<!-- If not Authenticated -->
-	<sec:authorize access="!isAuthenticated()">
-		<p>
-			<a href="<c:url value="/login"/>">Login</a>
-		</p>
-	</sec:authorize>
+		<!-- If not Authenticated -->
+		<sec:authorize access="!isAuthenticated()">
+			<p class="text-center">
+				<a href="<c:url value="/login"/>">Login</a>
+			</p>
+		</sec:authorize>
+	</div>
 </body>
 </html>

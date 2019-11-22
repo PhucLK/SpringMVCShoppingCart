@@ -11,8 +11,8 @@
 	<div class="container" style="text-align: center !important;">
 		<h1 style="margin-top: 10% !important;">Thanks you ordered our
 			shopping</h1>
-		<p>If you have any question about product please feed back for us!</p>
-		<p>We hope you feed happy when shopping here! Thanks a lot !</p>
+		<p>If you have any question about product please feed back for us !</p>
+		<p>We hope you will happy when you shopping here. Thanks a lot !</p>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

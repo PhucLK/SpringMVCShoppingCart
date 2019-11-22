@@ -94,5 +94,6 @@
 		</div>
 
 	</div>
+	<a href="${pageContext.request.contextPath}/home"><button class="btn btn-primary">Home</button></a>
 </body>
 </html>

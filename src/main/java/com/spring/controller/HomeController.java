@@ -276,6 +276,11 @@ public class HomeController {
 			return ("redirect:/success");
 		}
 	}
+	
+	@GetMapping("/success")
+	public String success() {
+		return "thanks";
+	}
 
 	@GetMapping(value = "/delete/{orderSizeTem}")
 	public String delete(Model model, @PathVariable("orderSizeTem") String orderSizeTem) {
@@ -289,10 +294,7 @@ public class HomeController {
 
 	}
 
-	@GetMapping("/success")
-	public String success() {
-		return "thanks";
-	}
+
 
 	@PostMapping("/search")
 	public String search(Model model, @RequestParam("search") String search) {
@@ -332,17 +334,13 @@ public class HomeController {
 	}
 
 	// sent mail
-	public String doSendEmail(String emailCustomer) {
+	public void doSendEmail(String emailCustomer) {
 		// takes input from e-mail form
 		String recipientAddress = emailCustomer;
 		String subject = "Thank You !";
-		String message = "Thank you was order our shop !";
-
-		// prints debug info
-		System.out.println("To: " + recipientAddress);
-		System.out.println("Subject: " + subject);
-		System.out.println("Message: " + message);
-
+		String message = "Thanks you ordered our shopping\r\n" + 
+						"If you have any question about product please feed back for us!\r\n" + 
+						"We hope you will happy when you shopping here! Thanks a lot !";
 		// creates a simple e-mail object
 		SimpleMailMessage email = new SimpleMailMessage();
 		email.setTo(recipientAddress);
@@ -352,8 +350,6 @@ public class HomeController {
 		// sends the e-mail
 		mailSender.send(email);
 
-		// forwards to the view named "Result"
-		return "Result";
 	}
 
 }
