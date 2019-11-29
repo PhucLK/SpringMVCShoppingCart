@@ -1,5 +1,4 @@
 
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -7,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopping Cart</title>
+<title>Home</title>
 <jsp:include page="header.jsp"></jsp:include>
 <style type="text/css">
 #myBtn {
@@ -42,13 +41,12 @@
 
 
 		<c:if test="${not empty message }">
-			<div class="container" style="margin-top: 120px; text-align: center;">
+			<div class="container" style="margin-top: 7rem !important; text-align: center;">
 				<div class="col-sm-12">
 					<div class="alert alert-danger">${message}</div>
 				</div>
-				<div class="col">
 					<img class="img-fluid" src="<c:url value="/resources/images/empty_cart.png" />" />
-				</div>
+				
 			</div>
 			<div class="col text-center" style="margin-top: 20px;">
 				<a href="<c:url value="/home"></c:url>">
@@ -58,33 +56,28 @@
 		</c:if>
 
 		<div class="container">
-			<div class="row" style="margin-top: 7rem !important;">
+			<div class="row" style="margin-top: 3rem !important;">
 				<c:forEach var="product" items="${ListProduct}">
-
 					<div class="col-sm-6 col-lg-4">
 						<h3 class="text-center">${product.name}</h3>
 						<div class="text-center">
-							<c:forEach varStatus="loop" var="i" items="${product.images}">
-
-								<c:if test="${loop.index == 1 }">
-									<a href="detail/${product.id}"> <img class="img-fluid"
-										src='<c:url value="/resources/images/${i.name}" /> '
-										width="280" style="display: none;" />
-									</a>
-								</c:if>
+							
+						<c:forEach varStatus="loop" var="i" items="${product.images}">
 								<c:if test="${loop.index == 0 }">
-									<a href="detail/${product.id}"> <img class="img-fluid"
+									<a class="a" href="detail/${product.id}"> <img class="img-fluid"
 										src='<c:url value="/resources/images/${i.name}" /> '
-										width="280" />
+										width="280" style="" />
+										
 									</a>
-									<a href="detail/${product.id}">
-										<button style="display: none; margin-top: -40px;" class="btn btn-primary">Detail</button>
+									<a class="detail" style="display: none;" href="detail/${product.id}">
+										<button style="margin-top: -120px;" class="btn btn-primary">Detail</button>
 									</a>
 								</c:if>
-							</c:forEach>
-
-
+						</c:forEach>
 						</div>
+
+
+						
 						<div class="caption">
 							<input type="hidden" name="idCategory"
 								value="${product.category.id}">
@@ -145,30 +138,37 @@
 
 		$(document).ready(function() {
 			// When the user clicks on the button, scroll to the top of the document
-			$("#myBtn").click(function() {
+			$("#myBtn").click(function() {		
 				$('body,html').animate({
 					scrollTop : 0
 				}, 800);
 				document.body.scrollTop = 100;
 				document.documentElement.scrollTop = 100;
 			});
+			
 
-			//
-
-			$(".img-fluid").on({
-				//event.preventDefault();
-				"mouseenter" : function(event) {
-					event.preventDefault();
-					$(".text-center .btn").fadeIn(600);
-
-				},
-				"mouseout" : function(event) {
-					event.preventDefault();
-					$(".text-center .btn").fadeOut(600);
-				}
-			});
 
 		})
+				var diva = Array.from(document.querySelectorAll(".a"));
+				var detail = Array.from(document.querySelectorAll(".detail"));
+				for(let i =0; i<diva.length;i++){
+
+					diva[i].addEventListener('mouseover',function(){
+						detail[i].setAttribute("style","display : ''");
+
+						detail[i].addEventListener('mouseover',function(){
+							detail[i].setAttribute("style","display : ''");
+						});
+						detail[i].addEventListener('mouseout',function(){
+							detail[i].setAttribute("style","display : none")
+						})
+					})
+					diva[i].addEventListener('mouseout',function(){
+						detail[i].setAttribute("style","display : none");
+					})
+				}
+				
+				
 	</script>
 </body>
 </html>
