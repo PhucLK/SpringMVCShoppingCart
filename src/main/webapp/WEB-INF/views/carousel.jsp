@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<div  style="margin-top: 5rem !important; margin-left: 0rem !important; margin-right: 0rem !important;">
+<div  style="margin-top: 3rem !important; margin-left: 0rem !important; margin-right: 0rem !important;">
 	<div id="demo" class="carousel slide" data-ride="carousel">
 		<ul class="carousel-indicators">
 			<li data-target="#demo" data-slide-to="0" class="active"></li>

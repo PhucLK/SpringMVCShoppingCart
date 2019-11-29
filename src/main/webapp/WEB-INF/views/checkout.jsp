@@ -75,7 +75,7 @@
 							<td scope="col"><c:forEach varStatus="loop" var="i"
 									items="${orderDetail.product.images}">
 
-									<c:if test="${loop.index == 1 }">
+									<c:if test="${loop.index == 0 }">
 										<img id="image" class="img-fluid"
 											src='<c:url value="/resources/images/${i.name}" /> '
 											width="60" />

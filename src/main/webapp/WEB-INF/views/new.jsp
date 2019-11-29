@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopping Cart</title>
+<title>LookBook</title>
 <jsp:include page="header.jsp"></jsp:include>
 <style type="text/css">
 #myBtn {

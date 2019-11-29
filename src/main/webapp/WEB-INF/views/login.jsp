@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Login</title>
 <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>

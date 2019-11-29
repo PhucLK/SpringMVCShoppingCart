@@ -25,7 +25,7 @@
 							<c:forEach var="orderDetail" items="${ListOrderDetail}">
 								<tr>
 									<td scope="col"><c:forEach varStatus="loop" var="i" items="${orderDetail.product.images}">
-											<c:if test="${loop.index == 1 }">
+											<c:if test="${loop.index == 0 }">
 												<a href="detail/${orderDetail.product.id}">
 												<img id="image" src='<c:url value="/resources/images/${i.name}" />' width="60" />
 												</a>
@@ -86,11 +86,11 @@
 				</div>
 			</c:if>
 			<c:if test="${empty ListOrderDetail }">
-				<div class="container" style="margin-top: 120px; text-align: center;">
+				<div class="container" style="margin-top: 7rem;; text-align: center;">
 					<div class="col-sm-12">
 						<div class="alert alert-danger">${message}</div>
 					</div>
-					<img class="rounded mx-auto d-block"
+					<img class="img-fluid"
 						src="<c:url value="/resources/images/empty_cart.png" />" />
 				</div>
 				<div class="col text-center" style="margin-top: 20px;">

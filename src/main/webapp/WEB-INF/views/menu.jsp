@@ -3,13 +3,13 @@
 	prefix="sec"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div class="container-fluid" style="margin-bottom: 5% !important;">
+<div class="container-fluid">
 
 
 	<nav style="background-color: black !important;"
 		class="navbar navbar-expand-xl navbar-expand-md navbar-expand-lg navbar-dark justify-content bg-dark fixed-top">
 		<a class="navbar-brand" href='<c:url value="/home"></c:url>'><img
-			src='<c:url value="/resources/images/a.jpg"/>' width="65" height="67">
+			src='<c:url value="/resources/images/a.jpg"/>' width="55" height="57">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContentXL"
